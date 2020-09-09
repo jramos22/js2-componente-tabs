@@ -2,12 +2,11 @@ function evento1(event) {
     event.preventDefault();
     const id = event.currentTarget.getAttribute('href').substring(1);
 
-    let accion = document.querySelectorAll(`${id}`);
-    console.log(id);
     for (let i= 0; i < contenido.length; i++) {
         contenido[i].style.display='none';
         enlaces[i].style.backgroundColor ='#eee';
         enlaces[i].style.borderBottomColor ='#999';
+
         if (contenido[i].getAttribute('id')==id) {
             contenido[i].style.display ='block';
             enlaces[i].style.backgroundColor ='white';
