@@ -34,3 +34,13 @@ body {
   padding: 20px;
   border: 1px solid #999;
 }
+
+/*Estado clases js*/
+.js_active {
+  background-color: #fff;
+  border-bottom: 1px solid #fff;
+  color: #000;
+}
+.js_content_hidden {
+  display: none;
+}

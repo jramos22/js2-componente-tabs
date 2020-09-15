@@ -3,27 +3,28 @@ function evento1(event) {
     const id = event.currentTarget.getAttribute('href').substring(1);
 
     for (let i= 0; i < contenido.length; i++) {
-        contenido[i].style.display='none';
-        enlaces[i].style.backgroundColor ='#eee';
-        enlaces[i].style.borderBottomColor ='#999';
-
+        contenido[i].classList.add('js_content_hidden');
         if (contenido[i].getAttribute('id')==id) {
-            contenido[i].style.display ='block';
-            enlaces[i].style.backgroundColor ='white';
-            enlaces[i].style.borderBottomColor ='white';
+            contenido[i].classList.remove('js_content_hidden');
+            }
         }
-        
+    for (let i = 0; i < enlaces.length; i++) {
+        enlaces[i].classList.remove('js_active');
     }
+    event.currentTarget.classList.add('js_active');
 }
+
 const enlaces = document.querySelectorAll('.tabs-tablist-item');
 
 const contenido =document.querySelectorAll('.tabs-content-item');
 
 for (let i =0; i<contenido.length; i++){
-    contenido[i].style.display= 'none';
+    contenido[i].classList.add('js_content_hidden');
 }
 
-contenido[0].style.display='block';
+contenido[0].classList.remove('js_content_hidden');
+
+enlaces[0].classList.add('js_active');
 
 for(let i = 0; i<enlaces.length; i++){
     enlaces[i].addEventListener('click', evento1);
